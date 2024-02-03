@@ -1,1 +1,49 @@
+My solution to the following queries:
+
+https://cs50.harvard.edu/sql/2023/psets/0/views/
+
+
+1 - write a SQL query that a translator might take interest in: list, side by side, the Japanese title and the English title for each print. 
+Ensure the Japanese title is the first column, followed by the English title.
+
+SELECT "japanese_title", "english_title" FROM "views";
+
+2 - write a SQL query to list the average colors of prints by Hokusai that include “river” in the English title. (As an aside, do they have any hint of blue?)
+
+SELECT "average_color" FROM "views"
+WHERE "artist" = 'Hokusai' AND "english_title" LIKE '%River%';
+
+3 - write a SQL query to count how many prints by Hokusai include “Fuji” in the English title. Though all of Hokusai’s prints focused on Mt. Fuji,
+in how many did “Fuji” make it into the title?
+
+SELECT COUNT("print_number") FROM "views"
+WHERE "artist" = 'Hokusai' AND "english_title" LIKE '%Fuji%';
+
+4 - write a SQL query to count how many prints by Hiroshige have English titles that refer to the “Eastern Capital”. Hiroshige’s prints were created in 
+Japan’s “Edo period,” referencing the eastern capital city of Edo, now Tokyo.
+
+SELECT COUNT("print_number") FROM "views"
+WHERE "artist" = 'Hiroshige' AND "english_title" LIKE '%Eastern Capital%';
+
+5 - write a SQL query to find the highest contrast value of prints by Hokusai. Name the column “Maximum Contrast”. 
+Does Hokusai’s prints most contrasting print actually have much contrast?
+
+SELECT MAX("contrast") AS "Maximum Contrast" FROM "views"
+WHERE "artist" = 'Hokusai';
+
+6 - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
